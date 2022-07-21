@@ -93,15 +93,4 @@ async def on_message(message):
     else:
       await message.channel.send("你沒有權限欸,要不要在你自己的伺服器試試看")
 
-  if message.content.startswith('h!setticket'):
-        channel = message.channel
-        #機器人叫你先跟他說你好
-        await channel.send('你想要記錄在哪個頻道')
-        def checkmessage(m):
-            return mm.channel == channel
-		#獲取傳訊息的資訊(message是類型，也可以用reaction_add等等動作)
-        msg = await client.wait_for('message', check=checkmessage)
-        await channel.send('嗨, {.author}!'.format(msg))
-
-
 bot.run("TOKEN在這")
